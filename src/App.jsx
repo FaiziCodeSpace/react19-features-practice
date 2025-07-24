@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import UseTransitionDemo from './components/UseTransitionDemo';
+import UseOptimisticDemo from './components/UseOptimisicDemo';
+
 
 
 export default function App() {
@@ -8,6 +10,7 @@ export default function App() {
   const renderFeature = () => {
     switch (feature) {
       case 'useTransition': return <UseTransitionDemo />;
+      case 'useOptimistic': return <UseOptimisticDemo />;
       default: return <p>Select a feature to preview.</p>;
     }
   };
