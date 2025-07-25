@@ -1,0 +1,28 @@
+/* SubmitButton */
+.submit-btn{
+    padding: 10px 20px;
+    background-color: #984bcd;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    &:hover{
+        background-color: #c69be3;
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+    &:active{
+        background-color: #984bcd;
+        cursor: pointer;
+        transform: scale(1);
+    }
+    &:disabled{
+        background-color: #ddc3ee;
+    }
+}
+
+.feedback-form form{
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
