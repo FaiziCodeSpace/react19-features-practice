@@ -7,14 +7,18 @@ export default function FeedBackForm() {
   const handleSubmit = async (prevData, formData) => {
     try {
       const feed = formData.get("feedback");
-      const id = Math.random() * 10000;
+      if(feed!=''){
+         const id = Math.random() * 10000;
       let res = await fetch("http://localhost:3001/feedbacks", {
         method: "post",
         body: JSON.stringify({ id, feed }),
       });
-
+      await new Promise(res=>setTimeout(res, 2000));
       if (!res.ok) return { error: "API not found!" };
       return { msg: "Succeded!" };
+      }else{
+        return {error: 'The Textarea should not be empty!'}
+      }
 
     } catch {
       console.log("API ERROR");
@@ -29,7 +33,7 @@ export default function FeedBackForm() {
         
       <form action={formAction}>
         <label htmlFor="feedback">FeedBack:</label>
-        <textarea name="feedback" id="feedback"></textarea>
+        <textarea placeholder="Your FeedBack" rows={5} name="feedback" id="feedback"></textarea>
         <SubmitButton />
       </form>
       {
