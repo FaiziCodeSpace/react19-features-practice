@@ -3,10 +3,10 @@ import { useFormStatus } from "react-dom";
 
 
 export default function SubmitButton(){
-    const { isPending } = useFormStatus();
+    const { pending } = useFormStatus();
     return(<>
-        <button className="submit-btn">
-            {isPending? 'Submitting...':'Submit'}
+        <button type="submit" disabled={pending} className="submit-btn">
+            {pending? 'Submitting...':'Submit'}
         </button>
     </>)
 }
