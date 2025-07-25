@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import UseTransitionDemo from './components/UseTransitionDemo';
 import UseOptimisticDemo from './components/UseOptimisicDemo';
+import FeedBackForm from './components/UseFormState';
 
 
 
@@ -11,6 +12,7 @@ export default function App() {
     switch (feature) {
       case 'useTransition': return <UseTransitionDemo />;
       case 'useOptimistic': return <UseOptimisticDemo />;
+      case 'useFormState': return <FeedBackForm />;
       default: return <p>Select a feature to preview.</p>;
     }
   };
@@ -23,6 +25,7 @@ export default function App() {
         <option value="useOptimistic">useOptimistic</option>
         <option value="useActionState">useActionState</option>
         <option value="useFormStatus">useFormStatus</option>
+        <option value="useFormState">useFormState</option>
       </select>
 
       <hr />
