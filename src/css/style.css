@@ -1,28 +1,61 @@
 /* SubmitButton */
-.submit-btn{
+.submit-btn {
     padding: 10px 20px;
     background-color: #984bcd;
     color: white;
     border-radius: 8px;
     border: none;
-    &:hover{
+
+    &:hover {
         background-color: #c69be3;
         cursor: pointer;
         transform: scale(1.1);
     }
-    &:active{
+
+    &:active {
         background-color: #984bcd;
         cursor: pointer;
         transform: scale(1);
     }
-    &:disabled{
+
+    &:disabled {
         background-color: #ddc3ee;
     }
 }
 
-.feedback-form form{
+.feedback-form form {
     margin-top: 1.5rem;
     display: flex;
     gap: 10px;
     flex-direction: column;
+}
+
+/* Auth-Form  */
+.auth-Form-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.auth-Form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 30%;
+}
+
+.auth-Form .username,
+.auth-Form .password {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    &:focus{
+        outline: 3px solid #ddc3ee;
+    }
+    &:hover{
+        outline: 3px solid #ddc3ee;
+    }
 }

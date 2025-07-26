@@ -13,8 +13,7 @@ const handleSubmit = async (prevData, formData) => {
       return { nErr: "The Username should be more 5 characters." };
     } else if (!regex.test(password)) {
       return {
-        pErr:
-          "Minimum 8 characters, At least 1 uppercase letter, At least 1 lowercase letter, At least 1 digit and At least 1 special character ",
+        pErr: "Minimum 8 characters, At least 1 uppercase letter, 1 lowercase letter, 1 digit and 1 special character ",
       };
     } else {
       const res = await fetch("http://localhost:3001/authData", {
@@ -38,16 +37,40 @@ export default function AuthFormDemo() {
   const [state, formAction] = useActionState(handleSubmit, "");
   return (
     <>
-      <h2>Sign in</h2>
-      <form action={formAction}>
-        <input type="text" name="username" placeholder="Username" required />
-        {state?.error && state?.error? <p style={{color:'red'}}>{state.error}</p>: null}
-        {state?.nErr && state?.nErr? <p style={{color:'red'}}>{state.nErr}</p>: null}
-        <input type="password" name="password" placeholder="Password" required />
-        {state?.pErr && state?.pErr? <p style={{color:'red'}}>{state.pErr}</p>: null}
-        {state?.msg && state?.msg? <p style={{color:'green'}}>{state.msg}</p>: null}
-        <SubmitButton />
-      </form>
+      <div className="auth-Form-wrapper">
+        <h2>Sign in</h2>
+        <form className="auth-Form" action={formAction}>
+          <input
+            className="username"
+            type="text"
+            name="username"
+            placeholder="Username"
+            required
+          />
+          {state?.error && state?.error ? (
+            <p style={{ color: "red" }}>{state.error}</p>
+          ) : null}
+          {state?.nErr && state?.nErr ? (
+            <p style={{ color: "red" }}>{state.nErr}</p>
+          ) : null}
+
+          <input
+            className="password"
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          {state?.pErr && state?.pErr ? (
+            <p style={{ color: "red" }}>{state.pErr}</p>
+          ) : null}
+          {state?.msg && state?.msg ? (
+            <p style={{ color: "green" }}>{state.msg}</p>
+          ) : null}
+
+          <SubmitButton />
+        </form>
+      </div>
     </>
   );
 }
