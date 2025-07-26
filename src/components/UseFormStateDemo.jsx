@@ -1,5 +1,5 @@
 import { useFormState } from "react-dom";
-import SubmitButton from "./UseFormStatus";
+import SubmitButton from "./UseFormStatusDemo";
 
 
 export default function FeedBackForm() {
@@ -25,7 +25,7 @@ export default function FeedBackForm() {
     }
   };
 
-  const [state, formAction] = useFormState(handleSubmit, '');
+  const [state, formAction] = useFormState( handleSubmit, '');
 
   return (
     <>

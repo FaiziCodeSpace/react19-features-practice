@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import UseTransitionDemo from './components/UseTransitionDemo';
 import UseOptimisticDemo from './components/UseOptimisicDemo';
-import FeedBackForm from './components/UseFormState';
+import FeedBackForm from './components/UseFormStateDemo';
+import AuthFormDemo from './components/UseActionFormDemo';
 
 
 
@@ -13,6 +14,7 @@ export default function App() {
       case 'useTransition': return <UseTransitionDemo />;
       case 'useOptimistic': return <UseOptimisticDemo />;
       case 'useFormState': return <FeedBackForm />;
+      case 'useActionState': return <AuthFormDemo />;
       default: return <p>Select a feature to preview.</p>;
     }
   };
@@ -23,9 +25,8 @@ export default function App() {
       <select value={feature} onChange={(e) => setFeature(e.target.value)}>
         <option value="useTransition">useTransition</option>
         <option value="useOptimistic">useOptimistic</option>
-        <option value="useActionState">useActionState</option>
         <option value="useFormStatus">useFormStatus</option>
-        <option value="useFormState">useFormState</option>
+        <option value="useActionState">useActionState</option>
       </select>
 
       <hr />
