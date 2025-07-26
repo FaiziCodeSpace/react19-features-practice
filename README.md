@@ -98,11 +98,6 @@ This component demonstrates the power of the `useActionState()` hook for managin
 - Displays proper error messages without additional state variables.
 - Simulated login logic with async `authenticateUser()` function.
 
-### 📦 Structure:
-- `AuthFormDemo.jsx`: Main form logic and UI
-- `authAction`: Server action logic to validate and respond
-- Custom styling via `authFormUI.css` for a polished look
-
 ### 🚀 Why it matters:
 - Eliminates the need for extra `useState()` for managing errors.
 - Centralizes action and state logic using `useActionState()`.
