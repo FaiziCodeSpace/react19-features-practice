@@ -83,6 +83,33 @@ This component showcases a feedback form built using `useFormState()` to handle 
 
 ---
 
+## 5. `useActionStateDemo`
+
+**AuthFormDemo.jsx — Authentication Form with Validation & `useActionState`**
+
+This component demonstrates the power of the `useActionState()` hook for managing complex form interactions, especially where validation and async server actions are involved.
+
+### 🔧 Core Features:
+- Real-time username and password input with client-side validation.
+- On submit, `useActionState()` handles the form action and updates UI state.
+- Validation includes:
+  - Empty field checks
+  - Password length enforcement (min 8 characters)
+- Displays proper error messages without additional state variables.
+- Simulated login logic with async `authenticateUser()` function.
+
+### 📦 Structure:
+- `AuthFormDemo.jsx`: Main form logic and UI
+- `authAction`: Server action logic to validate and respond
+- Custom styling via `authFormUI.css` for a polished look
+
+### 🚀 Why it matters:
+- Eliminates the need for extra `useState()` for managing errors.
+- Centralizes action and state logic using `useActionState()`.
+- Perfect example for handling login, signup, or any complex form with validations and server logic.
+
+---
+
 Each folder is a standalone working demo focused on one feature.
 
 ---
