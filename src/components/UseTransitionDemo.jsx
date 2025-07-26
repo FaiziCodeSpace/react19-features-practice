@@ -1,7 +1,7 @@
 import { useState, useTransition } from "react";
 
 export default function UseTransitionDemo(){
-    const [fruits, setFruits]=useState('');
+    const [fruits, setFruits] = useState('');
   const [list, setList] = useState([]);
   const [isPending, setTransition] = useTransition();
 
